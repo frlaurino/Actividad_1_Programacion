@@ -12,9 +12,14 @@ def cantidad_por_actividad(socios, categoria):
 
 def promedio_cuotas(socios):
     suma = 0
-    for i in range(len(socios)):
-        suma = suma + socios[i][4]
-    promedio = suma / cantidad_socios(socios)
+
+    if cantidad_socios(socios) > 0:
+        for i in range(len(socios)):
+            suma = suma + socios[i][4]
+        promedio = suma / cantidad_socios(socios)
+    else:
+        promedio = 0
+        
     return promedio
 
 def mostrar_estadisticas(socios, actividades):
